@@ -29,6 +29,10 @@ snap install exits non-zero if the package is already present.
 Fall back to snap refresh so re-runs do not abort the script.
 ```
 
+## Documentation
+
+When a change to any script alters its behavior (e.g. adding/removing packages, changing setup steps, modifying idempotency logic), update `README.md` to reflect the change. Keep the "What it does" section in sync with what the scripts actually do.
+
 ## Validation
 
 Always run `bash -n setup.sh` to check syntax before committing.
