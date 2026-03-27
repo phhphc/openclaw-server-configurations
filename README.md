@@ -6,7 +6,7 @@ Fresh server setup script for Ubuntu. Installs packages, creates users, and conf
 
 - **Packages** — `git`, `unzip`, `file`, `ripgrep`, `libreoffice`, Python 3 libs (`pip`, `openpyxl`, `python-docx`), Node.js 24, Neovim, and Yazi (via snap)
 - **Users** — Creates `clara` and `atlas`, enables systemd linger, and sets up `~/.config/systemd/user`
-- **Neovim** — Installs [custom Neovim config](https://github.com/phhphc/neovim-config) for each user
+- **Neovim** — Installs [custom Neovim config](https://github.com/phhphc/neovim-config) for each user (backs up existing config on re-run)
 - **Shell** — Appends a [Yazi `y` wrapper](https://yazi-rs.github.io/docs/quick-start#shell-wrapper) and [OpenClaw startup optimisations](https://docs.openclaw.ai/vps) to each user's `.bashrc` (idempotent)
 
 ## Install
