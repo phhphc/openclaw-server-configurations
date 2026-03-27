@@ -97,7 +97,7 @@ setup_bashrc() {
     # Yazi shell wrapper — lets `y` act as a cd-on-exit wrapper around yazi.
     # See: https://yazi-rs.github.io/docs/quick-start#shell-wrapper
     local yazi_block
-    read -r -d '' yazi_block << 'EOF'
+    read -r -d '' yazi_block << 'EOF' || true
 
 # Yazi shell wrapper
 # Changes the working directory to wherever yazi exits in.
@@ -115,7 +115,7 @@ EOF
     # OPENCLAW_NO_RESPAWN=1 skips self-respawn to cut startup overhead.
     # See: https://docs.openclaw.ai/vps
     local openclaw_block
-    read -r -d '' openclaw_block << 'EOF'
+    read -r -d '' openclaw_block << 'EOF' || true
 
 # OpenClaw startup optimisations (Node compile cache + skip self-respawn)
 export NODE_COMPILE_CACHE=/var/tmp/openclaw-compile-cache
