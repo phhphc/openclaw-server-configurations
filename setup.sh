@@ -73,7 +73,7 @@ setup_users() {
 }
 
 setup_nvim() {
-    log "Installing AstroNvim for each user..."
+    log "Installing Neovim config for each user..."
     for user in "${USERS[@]}"; do
         local home
         home="$(getent passwd "$user" | cut -d: -f6)"
@@ -84,10 +84,10 @@ setup_nvim() {
             continue
         fi
 
-        git clone --depth 1 https://github.com/AstroNvim/template "$nvim_config"
+        git clone --depth 1 https://github.com/phhphc/neovim-config "$nvim_config"
         rm -rf "$nvim_config/.git"
         chown -R "$user:$user" "$nvim_config"
-        log "AstroNvim installed for: $user"
+        log "Neovim config installed for: $user"
     done
 }
 
