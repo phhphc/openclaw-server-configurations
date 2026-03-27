@@ -12,7 +12,7 @@ A single Bash script (`setup.sh`) to provision a fresh Ubuntu server. It is run 
 
 **Each concern is its own function.** Keep `install_packages`, `setup_users`, `setup_nvim`, and `setup_bashrc` focused. If adding a new setup step, add a new function and call it from `main`.
 
-**All steps must be idempotent.** The script must be safe to re-run without side effects. Use guard conditions (`if ! id`, `if [[ -d ... ]]`, `append_once`, `snap install ... || snap refresh ...`) wherever an operation would fail or duplicate on a second run.
+**All steps must be idempotent.** The script must be safe to re-run without side effects. Use guard conditions (`if ! id`, `if [[ -d ... ]]`, `append_once`, `snap list <pkg> && snap refresh <pkg> || snap install <pkg> --classic`) wherever an operation would fail or duplicate on a second run.
 
 **Error handling.** The script runs with `set -euo pipefail`. Any command that is expected to fail (e.g. snap already installed) must be handled explicitly — do not suppress errors with bare `|| true` unless the failure is truly inconsequential.
 
