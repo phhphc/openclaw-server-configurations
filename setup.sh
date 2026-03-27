@@ -81,8 +81,9 @@ setup_nvim() {
         local nvim_config="$home/.config/nvim"
 
         if [[ -d "$nvim_config" ]]; then
-            warn "Neovim config already exists for $user — skipping"
-            continue
+            rm -rf "$nvim_config.bak"
+            mv "$nvim_config" "$nvim_config.bak"
+            warn "Backed up existing config to $nvim_config.bak for $user"
         fi
 
         git clone --depth 1 "$NVIM_CONFIG_REPO" "$nvim_config"
