@@ -9,6 +9,7 @@ set -euo pipefail
 # ---------------------------------------------------------------------------
 
 USERS=("clara" "atlas")
+NVIM_CONFIG_REPO="https://github.com/phhphc/neovim-config"
 
 # ---------------------------------------------------------------------------
 # Helpers
@@ -84,7 +85,7 @@ setup_nvim() {
             continue
         fi
 
-        git clone --depth 1 https://github.com/phhphc/neovim-config "$nvim_config"
+        git clone --depth 1 "$NVIM_CONFIG_REPO" "$nvim_config"
         rm -rf "$nvim_config/.git"
         chown -R "$user:$user" "$nvim_config"
         log "Neovim config installed for: $user"
