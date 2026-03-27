@@ -18,3 +18,11 @@ curl -fsSL https://raw.githubusercontent.com/phhphc/openclaw-server-configuratio
 ```
 
 Reboot after the script completes if prompted.
+
+### Microsoft fonts (optional)
+
+Installs Microsoft core fonts (Times New Roman, Arial, Courier New, etc.). Run separately as it requires interactive acceptance of the Microsoft EULA:
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/phhphc/openclaw-server-configurations/main/setup_fonts.sh | bash
+```
