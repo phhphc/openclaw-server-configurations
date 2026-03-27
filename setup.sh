@@ -43,7 +43,7 @@ install_packages() {
     apt install -y python3-pip python3-openpyxl python3-docx
 
     log "Installing snaps..."
-    snap list neovim &>/dev/null && snap refresh neovim || snap install neovim --classic
+    snap list nvim &>/dev/null && snap refresh nvim || snap install nvim --classic
     snap list yazi &>/dev/null && snap refresh yazi || snap install yazi --classic
 
     log "Installing Node.js 24 via NodeSource..."
