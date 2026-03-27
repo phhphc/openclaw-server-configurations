@@ -26,7 +26,7 @@ append_once() {
     if grep -qF "$marker" "$file" 2>/dev/null; then
         echo "    [skip] already present: $marker"
     else
-        printf '%s\n' "$block" >> "$file"
+        printf '\n%s\n' "$block" >> "$file"
         echo "    [ok]   appended: $marker"
     fi
 }
