@@ -125,6 +125,13 @@ mkdir -p /var/tmp/openclaw-compile-cache
 export OPENCLAW_NO_RESPAWN=1
 EOF
 
+    local local_bin_block
+    read -r -d '' local_bin_block << 'EOF' || true
+
+# Add ~/.local/bin to PATH
+export PATH="$HOME/.local/bin:$PATH"
+EOF
+
     for user in "${USERS[@]}"; do
         local home
         home="$(getent passwd "$user" 2>/dev/null | cut -d: -f6)" || true
@@ -140,6 +147,7 @@ EOF
         echo "  >>> $user ($bashrc)"
         append_once "# Yazi shell wrapper" "$yazi_block" "$bashrc"
         append_once "# OpenClaw startup optimisations" "$openclaw_block" "$bashrc"
+        append_once "# Add ~/.local/bin to PATH" "$local_bin_block" "$bashrc"
     done
 }
 
