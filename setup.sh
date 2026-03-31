@@ -41,7 +41,7 @@ install_packages() {
     apt update -q
     apt install -y git unzip file ripgrep
     apt install -y libreoffice
-    apt install -y python3-pip python3-openpyxl python3-docx
+    apt install -y python3-pip python3-openpyxl python3-pandas python3-docx
 
     log "Installing snaps..."
     snap list nvim &>/dev/null && snap refresh nvim || snap install nvim --classic
